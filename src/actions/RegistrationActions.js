@@ -107,7 +107,7 @@ const selectedGenderValidation =
 
 const emailValidation =
 ({ dispatch, signupEmail, signupPassword, fullname, gender }) => {
-    if (signupEmail.includes('stud.ntnu.no')) {
+    if (signupEmail.includes('stud.hioa.no')) {
       userValidation({ dispatch, signupEmail, signupPassword, fullname, gender });
     } else {
       emailError({ dispatch, signupEmail, signupPassword, fullname, gender });
@@ -227,7 +227,7 @@ const createUserFail = (dispatch) => {
   });
   Alert.alert(
       'REGISTRATION FAILED',
-      'Your entered email are already in use',
+      'Your entered email may already be in use, or the connection was lost',
       [
         { text: 'OK', onPress: () => Actions.signup() },
       ]
@@ -240,7 +240,7 @@ const emailError = (dispatch) => {
   });
   Alert.alert(
       'REGISTRATION FAILED',
-      'Your email must contain "stud.ntnu.no"',
+      'Your email must contain "stud.hioa.no"',
       [
         { text: 'Continue', onPress: () => Actions.signup() },
       ]

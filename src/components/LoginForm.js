@@ -86,7 +86,7 @@ class LoginForm extends Component {
             <View style={styles.containerStyle}>
               <InputSignUp
                 label={this.renderEmailImage()}
-                placeholder="email@stud.ntnu.no"
+                placeholder="email@stud.hioa.no"
                 onChangeText={this.onEmailChange.bind(this)}
                 value={this.props.email} //input verdi for email
               />
