@@ -127,11 +127,42 @@ renderImage() {
   /* eslint-disable global-require */
   const icon = this.props.myGender === 'female' ? require('./images/inqueuewoman3.png') : require('./images/inqueue3.png');
   return (
-    <Image
-      style={{ flex: 1, height: undefined, width: undefined }}
-      resizeMode="contain"
-      source={icon}
-    />
+    <View style={{ flex: 2, backgroundColor: '#213140', borderRadius: 5, marginTop: 40, marginLeft: 40, marginRight: 40 }}>
+
+      <View style={{ height: 10, alignItems: 'center' }}>
+        {this.renderArrowDownImage()}
+      </View>
+
+      <View style={styles.ContainerView}>
+
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', borderBottomWidth: 1, borderColor: '#ffffff', marginTop: 10 }}>
+
+          {this.renderName()}
+        </View>
+
+        <View style={styles.infoView}>
+          <Text style={styles.textStyle2}>People in line: </Text>
+          <Text style={styles.textStyle}>{this.props.studasscount}</Text>
+        </View>
+
+
+        <View style={styles.infoView}>
+          <Text style={styles.textStyle2}>Subject: </Text>
+          <Text style={styles.textStyle}>{this.props.subject}</Text>
+        </View>
+
+
+        <View style={styles.infoView}>
+          <Text style={styles.textStyle2}>Available until: </Text>
+          <Text style={styles.textStyle}>{this.props.available}</Text>
+        </View>
+
+        <View style={styles.infoView}>
+          <Text style={styles.textStyle2}>Room: </Text>
+          <Text style={styles.textStyle}>{this.props.room}</Text>
+        </View>
+      </View>
+  </View>
   );
 /* eslint-enable global-require */
 }
